@@ -3,7 +3,7 @@
     <section class="intro">
       <h1>Ciao! Get the latest tech news!</h1>
     </section>
-    <PostList />
+    <PostList :posts="loadedPosts" />
   </div>
 </template>
 
@@ -13,6 +13,20 @@ import PostList from '@/components/Posts/PostList'
 export default {
   components: {
     PostList
+  }, data() {
+      return {
+        loadedPosts: [
+          {id: '1', 
+          title: 'First post', 
+          previewText: 'This is our first post', 
+          thumbnail: 'https://journeysoft.com/wp/wp-content/uploads/2017/05/mchistoryofprogramming-195x300.jpg' },
+           {id: '2', 
+          title: 'Second post', 
+          previewText: 'This is our second post', 
+          thumbnail: 'https://journeysoft.com/wp/wp-content/uploads/2017/05/mchistoryofprogramming-195x300.jpg' }
+        ]
+      }
+
   }
 }
 </script>
