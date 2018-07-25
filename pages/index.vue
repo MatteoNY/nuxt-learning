@@ -17,7 +17,7 @@ export default {
       return {
         loadedPosts: [
           {id: '1', 
-          title: 'First post', 
+          title: 'First post #1', 
           previewText: 'This is our first post', 
           thumbnail: 'https://journeysoft.com/wp/wp-content/uploads/2017/05/mchistoryofprogramming-195x300.jpg' },
            {id: '2', 
