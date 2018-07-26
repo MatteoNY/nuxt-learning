@@ -8,27 +8,45 @@
 </template>
 
 <script>
-import PostList from '@/components/Posts/PostList'
+import PostList from '@/components/Posts/PostList';
 
 export default {
   components: {
     PostList
-  }, data() {
-      return {
+  },
+  asyncData(context, callback) {
+    console.log ('context', context , 'client' , process.client)
+    setTimeout(() => {
+      callback(null, {
         loadedPosts: [
-          {id: '1', 
-          title: 'First post #1', 
-          previewText: 'This is our first post', 
-          thumbnail: 'https://journeysoft.com/wp/wp-content/uploads/2017/05/mchistoryofprogramming-195x300.jpg' },
-           {id: '2', 
-          title: 'Second post', 
-          previewText: 'This is our second post', 
-          thumbnail: 'https://journeysoft.com/wp/wp-content/uploads/2017/05/mchistoryofprogramming-195x300.jpg' }
+          {
+            id: '1',
+            title: 'First Post',
+            previewText: 'This is our first post!',
+            author: 'Matteo',
+            updatedDate: new Date(),
+            content: 'bla bla bla',
+            thumbnail:
+              'https://journeysoft.com/wp/wp-content/uploads/2017/05/mchistoryofprogramming-195x300.jpg'
+          },
+          {
+            id: '2',
+            title: 'Second Post',
+            previewText: 'This is our second post!',
+            thumbnail:
+              'https://journeysoft.com/wp/wp-content/uploads/2017/05/mchistoryofprogramming-195x300.jpg'
+          }
         ]
-      }
-
-  }
-}
+      });
+    }, 1500);
+  },
+  // data() {
+  //   return {
+  //     loadedPosts: []
+  //   };
+  // },
+  created() {}
+};
 </script>
 
 <style scoped>
