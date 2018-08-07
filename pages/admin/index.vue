@@ -4,28 +4,31 @@
       <AppButton @click="$router.push('/admin/new-post')">Create Post</AppButton>
     </section>
     <section class="existing-posts">
-      <h1>Existing posts</h1>
-      <PostList isAdmin/>
+      <h1>Existing Posts</h1>
+      <PostList
+        isAdmin
+        :posts="loadedPosts" />
     </section>
   </div>
 </template>
 
 <script>
-
 import PostList from '@/components/Posts/PostList'
 import AppButton from '@/components/UI/AppButton'
 
 export default {
+  layout: 'admin',
   components: {
     PostList,
     AppButton
+  },
+  computed: {
+    loadedPosts() {
+      return this.$store.getters.loadedPosts
+    }
   }
 }
-
-
 </script>
-
-
 
 <style scoped>
 .admin-page {
@@ -42,3 +45,4 @@ export default {
   text-align: center;
 }
 </style>
+

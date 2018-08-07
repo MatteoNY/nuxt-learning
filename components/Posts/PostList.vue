@@ -1,14 +1,13 @@
 <template>
   <section class="post-list">
     <PostPreview
-    v-for="(post, index) in posts" 
-      :key="index"
+      v-for="post in posts"
+      :key="post.id"
       :id="post.id"
       :is-admin="isAdmin"
       :thumbnail="post.thumbnail"
       :title="post.title"
       :previewText="post.previewText" />
- 
   </section>
 </template>
 
@@ -20,13 +19,13 @@ export default {
     PostPreview
   },
   props: {
-    posts: {
-      type: Array,
-      required: true
-    },
     isAdmin: {
       type: Boolean,
       default: false
+    },
+    posts: {
+      type: Array,
+      required: true
     }
   }
 }

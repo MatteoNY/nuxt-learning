@@ -1,6 +1,6 @@
-# n-blog
+# nuxt-course
 
-> Mio Blogger
+> Nuxt.js course for Udemy
 
 ## Build Setup
 

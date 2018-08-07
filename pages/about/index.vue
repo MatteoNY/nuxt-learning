@@ -9,8 +9,8 @@
 </template>
 
 <style scoped>
-  .about-page {
-    text-align: center;
-    padding: 30px;
-  }
+.about-page {
+  text-align: center;
+  padding: 30px;
+}
 </style>

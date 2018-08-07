@@ -1,19 +1,20 @@
 {
-  "name": "n-blog",
-  "version": "1.0.0",
-  "description": "Mio Blogger",
-  "author": "Matt C",
-  "private": true,
-  "scripts": {
-    "dev": "nuxt",
-    "build": "nuxt build",
-    "start": "nuxt start",
-    "generate": "nuxt generate"
-  },
-  "dependencies": {
-    "nuxt": "^1.0.0"
-  },
-  "devDependencies": {
-    "cross-env": "^5.0.1"
-  }
+    "name": "nuxt-course",
+    "version": "1.0.0",
+    "description": "Nuxt.js course from Max Udemy",
+    "author": "MC",
+    "private": true,
+    "scripts": {
+        "dev": "nuxt",
+        "build": "nuxt build",
+        "start": "nuxt start",
+        "generate": "nuxt generate"
+    },
+    "dependencies": {
+        "axios": "^0.18.0",
+        "nuxt": "^1.4.2"
+    },
+    "devDependencies": {
+        "cross-env": "^5.2.0"
+    }
 }
