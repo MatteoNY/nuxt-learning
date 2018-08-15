@@ -34,12 +34,17 @@ module.exports = {
     /*
      ** Global CSS can link to ~assets/css/styles etc. global styles or ~/assets not sure need to test
      */
-    css: [],
+    css: [
+        '~assets/styles/main.css'
+    ],
 
     /*
      ** Plugins to load before mounting the App
      */
-    plugins: [],
+    plugins: [
+        '~plugins/core-components.js',
+        '~plugins/date-filter.js'
+    ],
 
     /*
      ** Nuxt.js modules
