@@ -20,8 +20,6 @@ export default {
   layout: 'admin',
   components: {
     PostList
- //   ,
-  //  AppButton
   },
   computed: {
     loadedPosts() {

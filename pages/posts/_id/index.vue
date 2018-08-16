@@ -15,16 +15,15 @@
 </template>
 
 <script>
-import axios from 'axios'
-
-const POST_TO_URL = ' https://mclearnrxjs.firebaseio.com'
+ 
 
 export default {
   asyncData(context) {
-    return axios.get(`${POST_TO_URL}/posts/${context.params.id}.json`)
-      .then(res => {
+    return context.app.$axios
+    .$get(`/posts/${context.params.id}.json`)
+      .then(data => {
         return {
-          loadedPost: res.data
+          loadedPost: data
         }
       })
       .catch(e => context.error(e))
