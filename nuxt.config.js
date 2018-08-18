@@ -23,12 +23,12 @@ module.exports = {
      ** Customize the progress-bar color with height and duration which is the default
      */
     loading: { color: '#3B8070', height: '4px', duration: 5000 },
-
-    /* for SPA setting
     loadingIndicator: {
         name: 'circle',
         color: '#00ff00'
     },
+    /* for SPA setting
+   
       */
 
     /*
@@ -70,10 +70,12 @@ module.exports = {
 
     },
     env: {
-        baseUrl: process.env.BASE_URL ||  'https://mclearnrxjs.firebaseio.com'
+        baseUrl: process.env.BASE_URL ||  'https://mclearnrxjs.firebaseio.com',
+        fbAPIKey: 'AIzaSyDMh-J4ZFYmdY_T6XgVlXijtHYJutyB_tg'
     },
     transition: {
         name: 'fade',
         mode: 'out-in'
-    }
+    },
+    // middleware: 'log'
 }
