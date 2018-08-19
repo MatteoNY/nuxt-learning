@@ -10,34 +10,57 @@
           btn-style="inverted"
           style="margin-left: 10px"
           @click="isLogin = !isLogin">Switch to {{ isLogin ? 'Signup' : 'Login' }}</AppButton>
+
+<button @click="verityUser()" type="button">verify</button>
+
       </form>
     </div>
   </div>
 </template>
 
 <script>
-
-
 export default {
   name: 'AdminAuthPage',
   layout: 'admin',
   data() {
     return {
       isLogin: true,
-      email: "",
-      password: ""
+      email: '',
+      password: ''
     }
   },
   methods: {
     onSubmit() {
-      this.$store.dispatch("authenticateUser", {
-        isLogin: this.isLogin,
-        email: this.email,
-        password: this.password
+      this.$store
+        .dispatch('authenticateUser', {
+          isLogin: this.isLogin,
+          email: this.email,
+          password: this.password
+        })
+        // .then(() => {
+        //   this.$store.dispatch('sendVerifyEmail', {
+        //     isLogin: this.isLogin,
+        //     email: this.email,
+        //     password: this.password
+        //   })
+        // })
+        .then(() => {
+          if (!this.isLogin) {
+            console.log ('dispatch sendVerifyEmail')
+            this.$store.dispatch('sendVerifyEmail', {
+              isLogin: this.isLogin,
+              email: this.email,
+              password: this.password
+            })
+          } else {
+            this.$router.push('/admin')
+          }
+        })
+    },
+    verityUser() {
+      this.$store.dispatch('verifyEmail', {}).then(() => {
+        this.$router.push('/admin')
       })
-      .then(() => {
-        this.$router.push('/admin');
-      });
     }
   }
 }
